@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93DA00822C8AAD1D00FA6DEB /* Snail_TrailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00812C8AAD1D00FA6DEB /* Snail_TrailApp.swift */; };
+		93DA00842C8AAD1D00FA6DEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00832C8AAD1D00FA6DEB /* ContentView.swift */; };
+		93DA00862C8AAD1D00FA6DEB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00852C8AAD1D00FA6DEB /* Item.swift */; };
+		93DA00882C8AAD1E00FA6DEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DA00872C8AAD1E00FA6DEB /* Assets.xcassets */; };
+		93DA008B2C8AAD1E00FA6DEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DA008A2C8AAD1E00FA6DEB /* Preview Assets.xcassets */; };
+		93DA00952C8AAD1E00FA6DEB /* Snail_TrailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00942C8AAD1E00FA6DEB /* Snail_TrailTests.swift */; };
+		93DA009F2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA009E2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift */; };
+		93DA00A12C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00A02C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93DA00912C8AAD1E00FA6DEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93DA00762C8AAD1D00FA6DEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93DA007D2C8AAD1D00FA6DEB;
+			remoteInfo = "Snail Trail";
+		};
+		93DA009B2C8AAD1E00FA6DEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93DA00762C8AAD1D00FA6DEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93DA007D2C8AAD1D00FA6DEB;
+			remoteInfo = "Snail Trail";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93DA007E2C8AAD1D00FA6DEB /* Snail Trail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snail Trail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93DA00812C8AAD1D00FA6DEB /* Snail_TrailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailApp.swift; sourceTree = "<group>"; };
+		93DA00832C8AAD1D00FA6DEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		93DA00852C8AAD1D00FA6DEB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		93DA00872C8AAD1E00FA6DEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93DA008A2C8AAD1E00FA6DEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		93DA00902C8AAD1E00FA6DEB /* Snail TrailTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snail TrailTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93DA00942C8AAD1E00FA6DEB /* Snail_TrailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailTests.swift; sourceTree = "<group>"; };
+		93DA009A2C8AAD1E00FA6DEB /* Snail TrailUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snail TrailUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93DA009E2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailUITests.swift; sourceTree = "<group>"; };
+		93DA00A02C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93DA007B2C8AAD1D00FA6DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA008D2C8AAD1E00FA6DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA00972C8AAD1E00FA6DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93DA00752C8AAD1D00FA6DEB = {
+			isa = PBXGroup;
+			children = (
+				93DA00802C8AAD1D00FA6DEB /* Snail Trail */,
+				93DA00932C8AAD1E00FA6DEB /* Snail TrailTests */,
+				93DA009D2C8AAD1E00FA6DEB /* Snail TrailUITests */,
+				93DA007F2C8AAD1D00FA6DEB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93DA007F2C8AAD1D00FA6DEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93DA007E2C8AAD1D00FA6DEB /* Snail Trail.app */,
+				93DA00902C8AAD1E00FA6DEB /* Snail TrailTests.xctest */,
+				93DA009A2C8AAD1E00FA6DEB /* Snail TrailUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93DA00802C8AAD1D00FA6DEB /* Snail Trail */ = {
+			isa = PBXGroup;
+			children = (
+				93DA00812C8AAD1D00FA6DEB /* Snail_TrailApp.swift */,
+				93DA00832C8AAD1D00FA6DEB /* ContentView.swift */,
+				93DA00852C8AAD1D00FA6DEB /* Item.swift */,
+				93DA00872C8AAD1E00FA6DEB /* Assets.xcassets */,
+				93DA00892C8AAD1E00FA6DEB /* Preview Content */,
+			);
+			path = "Snail Trail";
+			sourceTree = "<group>";
+		};
+		93DA00892C8AAD1E00FA6DEB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				93DA008A2C8AAD1E00FA6DEB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		93DA00932C8AAD1E00FA6DEB /* Snail TrailTests */ = {
+			isa = PBXGroup;
+			children = (
+				93DA00942C8AAD1E00FA6DEB /* Snail_TrailTests.swift */,
+			);
+			path = "Snail TrailTests";
+			sourceTree = "<group>";
+		};
+		93DA009D2C8AAD1E00FA6DEB /* Snail TrailUITests */ = {
+			isa = PBXGroup;
+			children = (
+				93DA009E2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift */,
+				93DA00A02C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift */,
+			);
+			path = "Snail TrailUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93DA007D2C8AAD1D00FA6DEB /* Snail Trail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93DA00A42C8AAD1E00FA6DEB /* Build configuration list for PBXNativeTarget "Snail Trail" */;
+			buildPhases = (
+				93DA007A2C8AAD1D00FA6DEB /* Sources */,
+				93DA007B2C8AAD1D00FA6DEB /* Frameworks */,
+				93DA007C2C8AAD1D00FA6DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Snail Trail";
+			productName = "Snail Trail";
+			productReference = 93DA007E2C8AAD1D00FA6DEB /* Snail Trail.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93DA008F2C8AAD1E00FA6DEB /* Snail TrailTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93DA00A72C8AAD1E00FA6DEB /* Build configuration list for PBXNativeTarget "Snail TrailTests" */;
+			buildPhases = (
+				93DA008C2C8AAD1E00FA6DEB /* Sources */,
+				93DA008D2C8AAD1E00FA6DEB /* Frameworks */,
+				93DA008E2C8AAD1E00FA6DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93DA00922C8AAD1E00FA6DEB /* PBXTargetDependency */,
+			);
+			name = "Snail TrailTests";
+			productName = "Snail TrailTests";
+			productReference = 93DA00902C8AAD1E00FA6DEB /* Snail TrailTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93DA00992C8AAD1E00FA6DEB /* Snail TrailUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93DA00AA2C8AAD1E00FA6DEB /* Build configuration list for PBXNativeTarget "Snail TrailUITests" */;
+			buildPhases = (
+				93DA00962C8AAD1E00FA6DEB /* Sources */,
+				93DA00972C8AAD1E00FA6DEB /* Frameworks */,
+				93DA00982C8AAD1E00FA6DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93DA009C2C8AAD1E00FA6DEB /* PBXTargetDependency */,
+			);
+			name = "Snail TrailUITests";
+			productName = "Snail TrailUITests";
+			productReference = 93DA009A2C8AAD1E00FA6DEB /* Snail TrailUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93DA00762C8AAD1D00FA6DEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					93DA007D2C8AAD1D00FA6DEB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					93DA008F2C8AAD1E00FA6DEB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 93DA007D2C8AAD1D00FA6DEB;
+					};
+					93DA00992C8AAD1E00FA6DEB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 93DA007D2C8AAD1D00FA6DEB;
+					};
+				};
+			};
+			buildConfigurationList = 93DA00792C8AAD1D00FA6DEB /* Build configuration list for PBXProject "Snail Trail" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93DA00752C8AAD1D00FA6DEB;
+			productRefGroup = 93DA007F2C8AAD1D00FA6DEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93DA007D2C8AAD1D00FA6DEB /* Snail Trail */,
+				93DA008F2C8AAD1E00FA6DEB /* Snail TrailTests */,
+				93DA00992C8AAD1E00FA6DEB /* Snail TrailUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93DA007C2C8AAD1D00FA6DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DA008B2C8AAD1E00FA6DEB /* Preview Assets.xcassets in Resources */,
+				93DA00882C8AAD1E00FA6DEB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA008E2C8AAD1E00FA6DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA00982C8AAD1E00FA6DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93DA007A2C8AAD1D00FA6DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DA00842C8AAD1D00FA6DEB /* ContentView.swift in Sources */,
+				93DA00862C8AAD1D00FA6DEB /* Item.swift in Sources */,
+				93DA00822C8AAD1D00FA6DEB /* Snail_TrailApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA008C2C8AAD1E00FA6DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DA00952C8AAD1E00FA6DEB /* Snail_TrailTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93DA00962C8AAD1E00FA6DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93DA009F2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift in Sources */,
+				93DA00A12C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93DA00922C8AAD1E00FA6DEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93DA007D2C8AAD1D00FA6DEB /* Snail Trail */;
+			targetProxy = 93DA00912C8AAD1E00FA6DEB /* PBXContainerItemProxy */;
+		};
+		93DA009C2C8AAD1E00FA6DEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93DA007D2C8AAD1D00FA6DEB /* Snail Trail */;
+			targetProxy = 93DA009B2C8AAD1E00FA6DEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		93DA00A22C8AAD1E00FA6DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93DA00A32C8AAD1E00FA6DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93DA00A52C8AAD1E00FA6DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Snail Trail/Preview Content\"";
+				DEVELOPMENT_TEAM = YP9BF2VP8W;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "logangutk.Snail-Trail";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93DA00A62C8AAD1E00FA6DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Snail Trail/Preview Content\"";
+				DEVELOPMENT_TEAM = YP9BF2VP8W;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "logangutk.Snail-Trail";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93DA00A82C8AAD1E00FA6DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YP9BF2VP8W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "logangutk.Snail-TrailTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snail Trail.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Snail Trail";
+			};
+			name = Debug;
+		};
+		93DA00A92C8AAD1E00FA6DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YP9BF2VP8W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "logangutk.Snail-TrailTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snail Trail.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Snail Trail";
+			};
+			name = Release;
+		};
+		93DA00AB2C8AAD1E00FA6DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YP9BF2VP8W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "logangutk.Snail-TrailUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Snail Trail";
+			};
+			name = Debug;
+		};
+		93DA00AC2C8AAD1E00FA6DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YP9BF2VP8W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "logangutk.Snail-TrailUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Snail Trail";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93DA00792C8AAD1D00FA6DEB /* Build configuration list for PBXProject "Snail Trail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93DA00A22C8AAD1E00FA6DEB /* Debug */,
+				93DA00A32C8AAD1E00FA6DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93DA00A42C8AAD1E00FA6DEB /* Build configuration list for PBXNativeTarget "Snail Trail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93DA00A52C8AAD1E00FA6DEB /* Debug */,
+				93DA00A62C8AAD1E00FA6DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93DA00A72C8AAD1E00FA6DEB /* Build configuration list for PBXNativeTarget "Snail TrailTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93DA00A82C8AAD1E00FA6DEB /* Debug */,
+				93DA00A92C8AAD1E00FA6DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93DA00AA2C8AAD1E00FA6DEB /* Build configuration list for PBXNativeTarget "Snail TrailUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93DA00AB2C8AAD1E00FA6DEB /* Debug */,
+				93DA00AC2C8AAD1E00FA6DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93DA00762C8AAD1D00FA6DEB /* Project object */;
+}
