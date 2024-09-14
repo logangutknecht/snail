@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932ACC572C951216000AFA4C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC562C951216000AFA4C /* WelcomeView.swift */; };
+		932ACC592C951356000AFA4C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC582C951356000AFA4C /* MapView.swift */; };
+		93D2A6182C8FA07F0066460F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 93D2A6172C8FA07F0066460F /* GoogleSignIn */; };
+		93D2A61A2C8FA07F0066460F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 93D2A6192C8FA07F0066460F /* GoogleSignInSwift */; };
+		93D2A61F2C8FA38F0066460F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D2A61E2C8FA38F0066460F /* GoogleService-Info.plist */; };
+		93D2A6222C8FA8240066460F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D2A6212C8FA8240066460F /* Utilities.swift */; };
 		93DA00822C8AAD1D00FA6DEB /* Snail_TrailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00812C8AAD1D00FA6DEB /* Snail_TrailApp.swift */; };
 		93DA00842C8AAD1D00FA6DEB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00832C8AAD1D00FA6DEB /* ContentView.swift */; };
 		93DA00862C8AAD1D00FA6DEB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00852C8AAD1D00FA6DEB /* Item.swift */; };
@@ -15,7 +21,6 @@
 		93DA00952C8AAD1E00FA6DEB /* Snail_TrailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00942C8AAD1E00FA6DEB /* Snail_TrailTests.swift */; };
 		93DA009F2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA009E2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift */; };
 		93DA00A12C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DA00A02C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift */; };
-		93DA00AE2C8AB45C00FA6DEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DA00AD2C8AB45C00FA6DEB /* GoogleService-Info.plist */; };
 		93DA00B12C8AB58000FA6DEB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 93DA00B02C8AB58000FA6DEB /* FirebaseAnalytics */; };
 		93E9E41A2C8B3B3300D5DA48 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 93E9E4192C8B3B3300D5DA48 /* FirebaseAuth */; };
 		93E9E41D2C8B3C2000D5DA48 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E9E41C2C8B3C2000D5DA48 /* AuthenticationView.swift */; };
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		932ACC562C951216000AFA4C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		932ACC582C951356000AFA4C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		93D2A61B2C8FA0ED0066460F /* Snail-Trail-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Snail-Trail-Info.plist"; sourceTree = SOURCE_ROOT; };
+		93D2A61E2C8FA38F0066460F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93D2A6212C8FA8240066460F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		93DA007E2C8AAD1D00FA6DEB /* Snail Trail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snail Trail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DA00812C8AAD1D00FA6DEB /* Snail_TrailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailApp.swift; sourceTree = "<group>"; };
 		93DA00832C8AAD1D00FA6DEB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +64,6 @@
 		93DA009A2C8AAD1E00FA6DEB /* Snail TrailUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snail TrailUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DA009E2C8AAD1E00FA6DEB /* Snail_TrailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailUITests.swift; sourceTree = "<group>"; };
 		93DA00A02C8AAD1E00FA6DEB /* Snail_TrailUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snail_TrailUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		93DA00AD2C8AB45C00FA6DEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93E9E41C2C8B3C2000D5DA48 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		93E9E41E2C8B3EC200D5DA48 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		93E9E4202C8B423200D5DA48 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -69,6 +78,8 @@
 			files = (
 				93DA00B12C8AB58000FA6DEB /* FirebaseAnalytics in Frameworks */,
 				93E9E41A2C8B3B3300D5DA48 /* FirebaseAuth in Frameworks */,
+				93D2A6182C8FA07F0066460F /* GoogleSignIn in Frameworks */,
+				93D2A61A2C8FA07F0066460F /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93D2A6202C8FA8060066460F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				93D2A6212C8FA8240066460F /* Utilities.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		93DA00752C8AAD1D00FA6DEB = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +132,11 @@
 		93DA00802C8AAD1D00FA6DEB /* Snail Trail */ = {
 			isa = PBXGroup;
 			children = (
+				93D2A61B2C8FA0ED0066460F /* Snail-Trail-Info.plist */,
 				93DA00812C8AAD1D00FA6DEB /* Snail_TrailApp.swift */,
-				93DA00AD2C8AB45C00FA6DEB /* GoogleService-Info.plist */,
+				93D2A61E2C8FA38F0066460F /* GoogleService-Info.plist */,
 				93DA00832C8AAD1D00FA6DEB /* ContentView.swift */,
+				93D2A6202C8FA8060066460F /* Utils */,
 				93E9E41B2C8B3BCE00D5DA48 /* Authentication */,
 				93DA00852C8AAD1D00FA6DEB /* Item.swift */,
 				93DA00872C8AAD1E00FA6DEB /* Assets.xcassets */,
@@ -164,6 +185,8 @@
 				93E9E41E2C8B3EC200D5DA48 /* SignInEmailView.swift */,
 				93E9E4242C8B4D1300D5DA48 /* SettingsView.swift */,
 				93E9E4202C8B423200D5DA48 /* AuthenticationManager.swift */,
+				932ACC562C951216000AFA4C /* WelcomeView.swift */,
+				932ACC582C951356000AFA4C /* MapView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -187,6 +210,8 @@
 			packageProductDependencies = (
 				93DA00B02C8AB58000FA6DEB /* FirebaseAnalytics */,
 				93E9E4192C8B3B3300D5DA48 /* FirebaseAuth */,
+				93D2A6172C8FA07F0066460F /* GoogleSignIn */,
+				93D2A6192C8FA07F0066460F /* GoogleSignInSwift */,
 			);
 			productName = "Snail Trail";
 			productReference = 93DA007E2C8AAD1D00FA6DEB /* Snail Trail.app */;
@@ -262,6 +287,7 @@
 			mainGroup = 93DA00752C8AAD1D00FA6DEB;
 			packageReferences = (
 				93DA00AF2C8AB58000FA6DEB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				93D2A6162C8FA07F0066460F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 93DA007F2C8AAD1D00FA6DEB /* Products */;
 			projectDirPath = "";
@@ -280,8 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				93DA008B2C8AAD1E00FA6DEB /* Preview Assets.xcassets in Resources */,
+				93D2A61F2C8FA38F0066460F /* GoogleService-Info.plist in Resources */,
 				93DA00882C8AAD1E00FA6DEB /* Assets.xcassets in Resources */,
-				93DA00AE2C8AB45C00FA6DEB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,9 +335,12 @@
 				93DA00842C8AAD1D00FA6DEB /* ContentView.swift in Sources */,
 				93E9E4252C8B4D1300D5DA48 /* SettingsView.swift in Sources */,
 				93DA00862C8AAD1D00FA6DEB /* Item.swift in Sources */,
+				932ACC592C951356000AFA4C /* MapView.swift in Sources */,
 				93E9E41D2C8B3C2000D5DA48 /* AuthenticationView.swift in Sources */,
 				93E9E4212C8B423200D5DA48 /* AuthenticationManager.swift in Sources */,
+				932ACC572C951216000AFA4C /* WelcomeView.swift in Sources */,
 				93E9E4232C8B47E300D5DA48 /* RootView.swift in Sources */,
+				93D2A6222C8FA8240066460F /* Utilities.swift in Sources */,
 				93DA00822C8AAD1D00FA6DEB /* Snail_TrailApp.swift in Sources */,
 				93E9E41F2C8B3EC200D5DA48 /* SignInEmailView.swift in Sources */,
 			);
@@ -480,6 +509,9 @@
 				DEVELOPMENT_TEAM = YP9BF2VP8W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Snail-Trail-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to show you on the map and track your snail. This information is only stored locally.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show you on the map and track your snail. This information is only stored locally.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -509,6 +541,9 @@
 				DEVELOPMENT_TEAM = YP9BF2VP8W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Snail-Trail-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to show you on the map and track your snail. This information is only stored locally.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show you on the map and track your snail. This information is only stored locally.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -645,6 +680,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		93D2A6162C8FA07F0066460F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		93DA00AF2C8AB58000FA6DEB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -656,6 +699,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		93D2A6172C8FA07F0066460F /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93D2A6162C8FA07F0066460F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		93D2A6192C8FA07F0066460F /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93D2A6162C8FA07F0066460F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
 		93DA00B02C8AB58000FA6DEB /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 93DA00AF2C8AB58000FA6DEB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

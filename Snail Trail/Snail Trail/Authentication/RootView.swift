@@ -12,21 +12,24 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            NavigationStack{
-                SettingsView(showSignInView: $showSignInView)
+            NavigationStack {
+                WelcomeView()
             }
         }
-        .onAppear{
-            let authUser = try?  AuthenticationManager.shared.getAuthenticatedUser()
+        .onAppear {
+            let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
             self.showSignInView = authUser == nil
         }
         .fullScreenCover(isPresented: $showSignInView) {
-            NavigationStack{
+            NavigationStack {
                 AuthenticationView(showSignInView: $showSignInView)
-            }}
+            }
+        }
     }
 }
 
-#Preview {
-    RootView()
+struct RootView_Previews: PreviewProvider {
+    static var previews: some View {
+        RootView()
+    }
 }

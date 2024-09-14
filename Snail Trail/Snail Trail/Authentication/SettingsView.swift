@@ -21,6 +21,11 @@ final class SettingsViewModel: ObservableObject {
         }
         try await AuthenticationManager.shared.resetPassword(email: email)
     }
+    
+    func updatePassword() async throws {
+        let password = "password"
+        try await AuthenticationManager.shared.updatePassword(password: password)
+    }
 }
 
 struct SettingsView: View {
@@ -39,6 +44,23 @@ struct SettingsView: View {
                     }
                 }
             }
+            
+            AccountActions
+            
+        }
+        .navigationBarTitle("Settings")
+    }
+}
+
+#Preview {
+    NavigationStack{
+        SettingsView(showSignInView: .constant(false))
+    }
+}
+
+extension SettingsView {
+    private var AccountActions: some View {
+        Section {
             Button("Reset Password"){
                 Task {
                     do {
@@ -52,13 +74,21 @@ struct SettingsView: View {
                 }
             }
             
-        }
-        .navigationBarTitle("Settings")
-    }
-}
-
-#Preview {
-    NavigationStack{
-        SettingsView(showSignInView: .constant(false))
+            Button("Update Password"){
+                Task {
+                    do {
+                        try await viewModel.updatePassword()
+                        print("UPDATING PASSWORD")
+                        showSignInView = true
+                    } catch {
+                        print(error)
+                        
+                    }
+                }
+            }
+            
+        } header: {
+            Text("Account Actions")
+            }
     }
 }
