@@ -1,29 +1,67 @@
-//
-//  RootView.swift
-//  Snail Trail
-//
-//  Created by Logan Gutknecht on 9/6/24.
-//
-
 import SwiftUI
 
+class AppState: ObservableObject {
+    @Published var snail: Snail?
+    @Published var showSignInView: Bool = false
+    
+    private let snailKey = "SavedSnail"
+    
+    func saveSnail() {
+        if let encodedSnail = try? JSONEncoder().encode(snail) {
+            UserDefaults.standard.set(encodedSnail, forKey: snailKey)
+        }
+    }
+    
+    func loadSnail() {
+        if let savedSnail = UserDefaults.standard.data(forKey: snailKey),
+           let decodedSnail = try? JSONDecoder().decode(Snail.self, from: savedSnail) {
+            snail = decodedSnail
+        }
+    }
+}
+
 struct RootView: View {
-    @State private var showSignInView: Bool = false
+    @StateObject private var appState = AppState()
     
     var body: some View {
         ZStack {
-            NavigationStack {
-                WelcomeView()
+            if appState.showSignInView {
+                NavigationStack {
+                    AuthenticationView(showSignInView: $appState.showSignInView)
+                }
+            } else {
+                TabView {
+                    ProfileView()
+                        .tabItem {
+                            Image(systemName: "person")
+                            Text("Profile")
+                        }
+                    
+                    MapView()
+                        .tabItem {
+                            Image(systemName: "map")
+                            Text("Map")
+                        }
+                    
+                    Text("Friends View - To be implemented")
+                        .tabItem {
+                            Image(systemName: "person.2")
+                            Text("Friends")
+                        }
+                    
+                    SettingsView(showSignInView: $appState.showSignInView)
+                        .tabItem {
+                            Image(systemName: "gear")
+                            Text("Settings")
+                        }
+                }
+                .environmentObject(appState)
             }
         }
         .onAppear {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
-            self.showSignInView = authUser == nil
-        }
-        .fullScreenCover(isPresented: $showSignInView) {
-            NavigationStack {
-                AuthenticationView(showSignInView: $showSignInView)
-            }
+            appState.showSignInView = authUser == nil
+            appState.loadSnail()
         }
     }
 }
