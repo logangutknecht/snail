@@ -4,18 +4,39 @@ import MapKit
 struct MapView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var viewModel = MapViewModel()
+    @State private var showingSnailEdit = false
     
     var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: [appState.snail].compactMap { $0 }) { snail in
-            MapAnnotation(coordinate: snail.location) {
-                Image(systemName: "ant")
-                    .foregroundColor(.red)
-                    .background(Circle().fill(Color.white))
-                    .imageScale(.large)
+        ZStack {
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true, annotationItems: [appState.snail].compactMap { $0 }) { snail in
+                MapAnnotation(coordinate: snail.location) {
+                    SnailIconView(color: snail.color)
+                        .frame(width: 30, height: 30)
+                        .background(Circle().fill(Color.white))
+                        .onTapGesture {
+                            showingSnailEdit = true
+                        }
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
+            .accentColor(Color(.systemPink))
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        viewModel.centerMapOnAllSnailsAndUser(snails: [appState.snail].compactMap { $0 })
+                    }) {
+                        Image(systemName: "map")
+                            .padding()
+                            .background(Color.white.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                    .padding([.top, .trailing])
+                }
+                Spacer()
             }
         }
-        .edgesIgnoringSafeArea(.all)
-        .accentColor(Color(.systemPink))
         .onAppear {
             viewModel.checkIfLocationServicesIsEnabled()
         }
@@ -27,6 +48,11 @@ struct MapView: View {
                 snail.targetLocation = newLocation
                 appState.snail = snail
                 appState.saveSnail()
+            }
+        }
+        .sheet(isPresented: $showingSnailEdit) {
+            if let snail = appState.snail {
+                SnailEditView(snail: snail, isPresented: $showingSnailEdit)
             }
         }
     }
@@ -85,6 +111,27 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard var snailUnwrapped = snail.wrappedValue else { return }
         snailUnwrapped.move(elapsedTime: 1)
         snail.wrappedValue = snailUnwrapped
+    }
+    
+    func centerMapOnAllSnailsAndUser(snails: [Snail]) {
+        var coordinates = snails.map { $0.location }
+        if let userLocation = userLocation {
+            coordinates.append(userLocation)
+        }
+        
+        guard !coordinates.isEmpty else { return }
+        
+        let minLat = coordinates.map { $0.latitude }.min() ?? 0
+        let maxLat = coordinates.map { $0.latitude }.max() ?? 0
+        let minLon = coordinates.map { $0.longitude }.min() ?? 0
+        let maxLon = coordinates.map { $0.longitude }.max() ?? 0
+        
+        let center = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2,
+                                            longitude: (minLon + maxLon) / 2)
+        let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat) * 1.5,
+                                    longitudeDelta: (maxLon - minLon) * 1.5)
+        
+        region = MKCoordinateRegion(center: center, span: span)
     }
 }
 

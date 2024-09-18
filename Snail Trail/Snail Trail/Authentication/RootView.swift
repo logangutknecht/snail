@@ -1,7 +1,11 @@
 import SwiftUI
 
 class AppState: ObservableObject {
-    @Published var snail: Snail?
+    @Published var snail: Snail? {
+        didSet {
+            saveSnail()
+        }
+    }
     @Published var showSignInView: Bool = false
     
     private let snailKey = "SavedSnail"

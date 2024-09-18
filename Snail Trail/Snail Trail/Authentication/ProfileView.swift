@@ -13,13 +13,11 @@ struct ProfileView: View {
                 .font(.title)
                 .padding()
             
-            Image(systemName: "ant")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-                .padding()
-            
             if let snail = appState.snail {
+                SnailIconView(color: snail.color)
+                    .frame(width: 100, height: 100)
+                    .padding()
+                
                 Text("Your snail: \(snail.name)")
                     .font(.headline)
             } else {

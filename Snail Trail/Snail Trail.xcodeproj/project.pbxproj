@@ -11,6 +11,8 @@
 		932ACC592C951356000AFA4C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC582C951356000AFA4C /* MapView.swift */; };
 		932ACC5B2C9807F9000AFA4C /* snail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC5A2C9807F9000AFA4C /* snail.swift */; };
 		932ACC5D2C980822000AFA4C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC5C2C980822000AFA4C /* ProfileView.swift */; };
+		932ACC5F2C9A1453000AFA4C /* SnailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC5E2C9A1453000AFA4C /* SnailEditView.swift */; };
+		932ACC612C9B5A71000AFA4C /* SnailIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ACC602C9B5A71000AFA4C /* SnailIconView.swift */; };
 		93D2A6182C8FA07F0066460F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 93D2A6172C8FA07F0066460F /* GoogleSignIn */; };
 		93D2A61A2C8FA07F0066460F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 93D2A6192C8FA07F0066460F /* GoogleSignInSwift */; };
 		93D2A61F2C8FA38F0066460F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D2A61E2C8FA38F0066460F /* GoogleService-Info.plist */; };
@@ -54,6 +56,8 @@
 		932ACC582C951356000AFA4C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		932ACC5A2C9807F9000AFA4C /* snail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snail.swift; sourceTree = "<group>"; };
 		932ACC5C2C980822000AFA4C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		932ACC5E2C9A1453000AFA4C /* SnailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnailEditView.swift; sourceTree = "<group>"; };
+		932ACC602C9B5A71000AFA4C /* SnailIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnailIconView.swift; sourceTree = "<group>"; };
 		93D2A61B2C8FA0ED0066460F /* Snail-Trail-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Snail-Trail-Info.plist"; sourceTree = SOURCE_ROOT; };
 		93D2A61E2C8FA38F0066460F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93D2A6212C8FA8240066460F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				932ACC582C951356000AFA4C /* MapView.swift */,
 				932ACC5A2C9807F9000AFA4C /* snail.swift */,
 				932ACC5C2C980822000AFA4C /* ProfileView.swift */,
+				932ACC5E2C9A1453000AFA4C /* SnailEditView.swift */,
+				932ACC602C9B5A71000AFA4C /* SnailIconView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -344,10 +350,12 @@
 				93DA00862C8AAD1D00FA6DEB /* Item.swift in Sources */,
 				932ACC592C951356000AFA4C /* MapView.swift in Sources */,
 				93E9E41D2C8B3C2000D5DA48 /* AuthenticationView.swift in Sources */,
+				932ACC612C9B5A71000AFA4C /* SnailIconView.swift in Sources */,
 				93E9E4212C8B423200D5DA48 /* AuthenticationManager.swift in Sources */,
 				932ACC572C951216000AFA4C /* WelcomeView.swift in Sources */,
 				93E9E4232C8B47E300D5DA48 /* RootView.swift in Sources */,
 				93D2A6222C8FA8240066460F /* Utilities.swift in Sources */,
+				932ACC5F2C9A1453000AFA4C /* SnailEditView.swift in Sources */,
 				932ACC5B2C9807F9000AFA4C /* snail.swift in Sources */,
 				93DA00822C8AAD1D00FA6DEB /* Snail_TrailApp.swift in Sources */,
 				93E9E41F2C8B3EC200D5DA48 /* SignInEmailView.swift in Sources */,
