@@ -1,14 +1,12 @@
 import SwiftUI
 
 class AppState: ObservableObject {
-    @Published var snail: Snail? {
-        didSet {
-            saveSnail()
-        }
-    }
+    @Published var snail: Snail?
     @Published var showSignInView: Bool = false
+    @Published var userProfile: UserProfile = UserProfile()
     
     private let snailKey = "SavedSnail"
+    private let userProfileKey = "SavedUserProfile"
     
     func saveSnail() {
         if let encodedSnail = try? JSONEncoder().encode(snail) {
@@ -22,6 +20,25 @@ class AppState: ObservableObject {
             snail = decodedSnail
         }
     }
+    
+    func saveUserProfile() {
+        if let encodedProfile = try? JSONEncoder().encode(userProfile) {
+            UserDefaults.standard.set(encodedProfile, forKey: userProfileKey)
+        }
+    }
+    
+    func loadUserProfile() {
+        if let savedProfile = UserDefaults.standard.data(forKey: userProfileKey),
+           let decodedProfile = try? JSONDecoder().decode(UserProfile.self, from: savedProfile) {
+            userProfile = decodedProfile
+        }
+    }
+}
+
+struct UserProfile: Codable {
+    var username: String = "User123"
+    var bio: String = "I love snails!"
+    var profilePicture: Data?
 }
 
 struct RootView: View {
@@ -66,6 +83,7 @@ struct RootView: View {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
             appState.showSignInView = authUser == nil
             appState.loadSnail()
+            appState.loadUserProfile()
         }
     }
 }

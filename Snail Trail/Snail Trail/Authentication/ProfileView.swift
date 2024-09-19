@@ -1,45 +1,98 @@
-import SwiftUI
 import CoreLocation
+import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var appState: AppState
-    @State private var username: String = "User123"
     @State private var isCreatingSnail = false
     @State private var errorMessage = ""
+    @State private var showingProfileEdit = false
     
     var body: some View {
-        VStack {
-            Text("Welcome, \(username)!")
-                .font(.title)
-                .padding()
-            
-            if let snail = appState.snail {
-                SnailIconView(color: snail.color)
-                    .frame(width: 100, height: 100)
-                    .padding()
-                
-                Text("Your snail: \(snail.name)")
-                    .font(.headline)
-            } else {
-                Button("Create Starter Snail") {
-                    createStarterSnail()
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .center, spacing: 20) {
+                    profileHeader
+                    
+                    if let snail = appState.snail {
+                        snailInfo(snail)
+                    } else {
+                        createSnailButton
+                    }
+                    
+                    if isCreatingSnail {
+                        ProgressView()
+                    }
+                    
+                    if !errorMessage.isEmpty {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
                 }
-                .disabled(isCreatingSnail)
                 .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+            }
+            .navigationTitle("Profile")
+            .navigationBarItems(trailing: editButton)
+        }
+        .sheet(isPresented: $showingProfileEdit) {
+            ProfileEditView(profile: $appState.userProfile)
+        }
+    }
+    
+    private var profileHeader: some View {
+        VStack(spacing: 10) {
+            if let imageData = appState.userProfile.profilePicture,
+               let uiImage = UIImage(data: imageData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
+            } else {
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(.gray)
             }
             
-            if isCreatingSnail {
-                ProgressView()
-            }
+            Text(appState.userProfile.username)
+                .font(.title)
             
-            if !errorMessage.isEmpty {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
-            }
+            Text(appState.userProfile.bio)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+        }
+    }
+    
+    private func snailInfo(_ snail: Snail) -> some View {
+        VStack(spacing: 10) {
+            SnailIconView(color: snail.color)
+                .frame(width: 100, height: 100)
+            
+            Text("Your snail: \(snail.name)")
+                .font(.headline)
+        }
+    }
+    
+    private var createSnailButton: some View {
+        Button("Create Starter Snail") {
+            createStarterSnail()
+        }
+        .disabled(isCreatingSnail)
+        .padding()
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .cornerRadius(10)
+    }
+    
+    private var editButton: some View {
+        Button(action: {
+            showingProfileEdit = true
+        }) {
+            Image(systemName: "pencil")
         }
     }
     
