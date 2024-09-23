@@ -1,23 +1,27 @@
 import SwiftUI
+import CoreLocation
 
 class AppState: ObservableObject {
-    @Published var snail: Snail?
+    @Published var snails: [Snail] = []
     @Published var showSignInView: Bool = false
     @Published var userProfile: UserProfile = UserProfile()
+    @Published var userLocation: CLLocationCoordinate2D?
+    @Published var userBalance: Double = 100.0 // Starting balance
     
-    private let snailKey = "SavedSnail"
+    private let snailsKey = "SavedSnails"
     private let userProfileKey = "SavedUserProfile"
+    private let userBalanceKey = "UserBalance"
     
-    func saveSnail() {
-        if let encodedSnail = try? JSONEncoder().encode(snail) {
-            UserDefaults.standard.set(encodedSnail, forKey: snailKey)
+    func saveSnails() {
+        if let encodedSnails = try? JSONEncoder().encode(snails) {
+            UserDefaults.standard.set(encodedSnails, forKey: snailsKey)
         }
     }
     
-    func loadSnail() {
-        if let savedSnail = UserDefaults.standard.data(forKey: snailKey),
-           let decodedSnail = try? JSONDecoder().decode(Snail.self, from: savedSnail) {
-            snail = decodedSnail
+    func loadSnails() {
+        if let savedSnails = UserDefaults.standard.data(forKey: snailsKey),
+           let decodedSnails = try? JSONDecoder().decode([Snail].self, from: savedSnails) {
+            snails = decodedSnails
         }
     }
     
@@ -32,6 +36,47 @@ class AppState: ObservableObject {
            let decodedProfile = try? JSONDecoder().decode(UserProfile.self, from: savedProfile) {
             userProfile = decodedProfile
         }
+    }
+    
+    func saveUserBalance() {
+        UserDefaults.standard.set(userBalance, forKey: userBalanceKey)
+    }
+    
+    func loadUserBalance() {
+        userBalance = UserDefaults.standard.double(forKey: userBalanceKey)
+    }
+    
+    func updateSnailPositions() {
+        guard let userLocation = userLocation else { return }
+        for index in snails.indices {
+            snails[index].move(elapsedTime: 1, targetLocation: userLocation)
+        }
+        saveSnails()
+    }
+    
+    func canCreateFirstSnail() -> Bool {
+        return snails.isEmpty
+    }
+    
+    func calculateSnailCost(speed: Double, distance: Double) -> Double {
+        // This is a simple cost calculation. Adjust as needed.
+        return speed * distance * 0.1
+    }
+    
+    func purchaseSnail(name: String, color: Color, speed: Double, location: CLLocationCoordinate2D) -> Bool {
+        guard let userLocation = userLocation else { return false }
+        let distance = Snail.calculateDistance(from: location, to: userLocation)
+        let cost = calculateSnailCost(speed: speed, distance: distance)
+        
+        if userBalance >= cost {
+            let newSnail = Snail(name: name, location: location, color: color, speed: speed)
+            snails.append(newSnail)
+            userBalance -= cost
+            saveSnails()
+            saveUserBalance()
+            return true
+        }
+        return false
     }
 }
 
@@ -79,11 +124,13 @@ struct RootView: View {
                 .environmentObject(appState)
             }
         }
+        .environmentObject(appState)  // Add this line to ensure AppState is available everywhere
         .onAppear {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
             appState.showSignInView = authUser == nil
-            appState.loadSnail()
+            appState.loadSnails()
             appState.loadUserProfile()
+            appState.loadUserBalance()
         }
     }
 }

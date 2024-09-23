@@ -6,45 +6,40 @@ class Snail: Identifiable, ObservableObject, Codable {
     let id: UUID
     @Published var name: String
     @Published var location: CLLocationCoordinate2D
-    @Published var targetLocation: CLLocationCoordinate2D
     @Published var color: Color
-    let speed: Double = 1.34112 // 3 miles per hour in meters per second
+    let speed: Double
     
     enum CodingKeys: String, CodingKey {
-        case id, name, location, targetLocation, color
+        case id, name, location, color, speed
     }
     
-    init(id: UUID = UUID(), name: String, location: CLLocationCoordinate2D, targetLocation: CLLocationCoordinate2D, color: Color = .red) {
+    init(id: UUID = UUID(), name: String, location: CLLocationCoordinate2D, color: Color = .red, speed: Double) {
         self.id = id
         self.name = name
         self.location = location
-        self.targetLocation = targetLocation
         self.color = color
+        self.speed = speed
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(UUID.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        let locationDict = try container.decode([String: Double].self, forKey: .location)
-        location = CLLocationCoordinate2D(latitude: locationDict["latitude"] ?? 0, longitude: locationDict["longitude"] ?? 0)
-        let targetLocationDict = try container.decode([String: Double].self, forKey: .targetLocation)
-        targetLocation = CLLocationCoordinate2D(latitude: targetLocationDict["latitude"] ?? 0, longitude: targetLocationDict["longitude"] ?? 0)
-        let colorComponents = try container.decode([CGFloat].self, forKey: .color)
-        color = Color(.sRGB, red: colorComponents[0], green: colorComponents[1], blue: colorComponents[2], opacity: colorComponents[3])
+        location = try container.decode(CLLocationCoordinate2D.self, forKey: .location)
+        color = try container.decode(Color.self, forKey: .color)
+        speed = try container.decode(Double.self, forKey: .speed)
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
-        try container.encode(["latitude": location.latitude, "longitude": location.longitude], forKey: .location)
-        try container.encode(["latitude": targetLocation.latitude, "longitude": targetLocation.longitude], forKey: .targetLocation)
-        let colorComponents = color.components
-        try container.encode([colorComponents.red, colorComponents.green, colorComponents.blue, colorComponents.opacity], forKey: .color)
+        try container.encode(location, forKey: .location)
+        try container.encode(color, forKey: .color)
+        try container.encode(speed, forKey: .speed)
     }
     
-    func move(elapsedTime: TimeInterval) {
+    func move(elapsedTime: TimeInterval, targetLocation: CLLocationCoordinate2D) {
         let distance = speed * elapsedTime
         let bearing = calculateBearing(from: location, to: targetLocation)
         
@@ -64,6 +59,22 @@ class Snail: Identifiable, ObservableObject, Codable {
                                           longitude: endLon * 180 / .pi)
     }
     
+    func calculateETA(to targetLocation: CLLocationCoordinate2D) -> TimeInterval {
+        let distance = Snail.calculateDistance(from: location, to: targetLocation)
+        return distance / speed
+    }
+    
+    static func calculateDistance(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D) -> Double {
+        let earthRadius = 6371000.0 // Earth's radius in meters
+        let dLat = (end.latitude - start.latitude) * .pi / 180
+        let dLon = (end.longitude - start.longitude) * .pi / 180
+        let a = sin(dLat/2) * sin(dLat/2) +
+                cos(start.latitude * .pi / 180) * cos(end.latitude * .pi / 180) *
+                sin(dLon/2) * sin(dLon/2)
+        let c = 2 * atan2(sqrt(a), sqrt(1-a))
+        return earthRadius * c
+    }
+    
     private func calculateBearing(from start: CLLocationCoordinate2D, to end: CLLocationCoordinate2D) -> Double {
         let startLat = start.latitude * .pi / 180
         let startLon = start.longitude * .pi / 180
@@ -79,26 +90,48 @@ class Snail: Identifiable, ObservableObject, Codable {
     }
 }
 
-extension CLLocationCoordinate2D: Equatable {
-    public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
-        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+extension CLLocationCoordinate2D: Codable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let latitude = try container.decode(Double.self, forKey: .latitude)
+        let longitude = try container.decode(Double.self, forKey: .longitude)
+        self.init(latitude: latitude, longitude: longitude)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(latitude, forKey: .latitude)
+        try container.encode(longitude, forKey: .longitude)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case latitude
+        case longitude
     }
 }
 
-extension Color {
-    var components: (red: CGFloat, green: CGFloat, blue: CGFloat, opacity: CGFloat) {
-        #if canImport(UIKit)
-        typealias NativeColor = UIColor
-        #elseif canImport(AppKit)
-        typealias NativeColor = NSColor
-        #endif
-        
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var o: CGFloat = 0
-        
-        NativeColor(self).getRed(&r, green: &g, blue: &b, alpha: &o)
-        return (r, g, b, o)
+extension Color: Codable {
+    enum CodingKeys: String, CodingKey {
+        case red, green, blue, alpha
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let r = try container.decode(Double.self, forKey: .red)
+        let g = try container.decode(Double.self, forKey: .green)
+        let b = try container.decode(Double.self, forKey: .blue)
+        let a = try container.decode(Double.self, forKey: .alpha)
+        self.init(red: r, green: g, blue: b, opacity: a)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        var (r, g, b, a): (CGFloat, CGFloat, CGFloat, CGFloat) = (0, 0, 0, 0)
+        UIColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
+        try container.encode(r, forKey: .red)
+        try container.encode(g, forKey: .green)
+        try container.encode(b, forKey: .blue)
+        try container.encode(a, forKey: .alpha)
     }
 }
+
